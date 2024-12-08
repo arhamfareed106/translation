@@ -1,0 +1,5 @@
+pytesseract==0.3.13
+Pillow==10.4.0
+deep-translator==1.11.4
+Flask==3.0.0
+Flask-Cors==4.0.0

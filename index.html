@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean OCR Translator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Korean OCR Translator</h1>
+        
+        <div class="upload-section">
+            <div class="drop-zone" id="dropZone">
+                <input type="file" id="fileInput" accept="image/*" hidden>
+                <div class="drop-zone-text">
+                    <span>Drop image here or click to upload</span>
+                    <p class="supported-text">Supports: JPG, PNG, GIF</p>
+                </div>
+            </div>
+            <div id="imagePreview" class="image-preview hidden">
+                <img id="preview" src="" alt="Preview">
+                <button id="removeImage" class="remove-btn">×</button>
+            </div>
+        </div>
+
+        <button id="processBtn" class="process-btn" disabled>Process Image</button>
+
+        <div class="results-container hidden" id="resultsContainer">
+            <div class="result-section">
+                <h3>Original Text (Korean)</h3>
+                <div class="text-content" id="originalText"></div>
+            </div>
+
+            <div class="result-section">
+                <h3>Translated Text (English)</h3>
+                <div class="text-content" id="translatedText"></div>
+            </div>
+
+            <div class="parsed-fields">
+                <h3>Parsed Information</h3>
+                <div class="fields-grid">
+                    <div class="field">
+                        <label>Name:</label>
+                        <span id="nameField"></span>
+                    </div>
+                    <div class="field">
+                        <label>Phone:</label>
+                        <span id="phoneField"></span>
+                    </div>
+                    <div class="field">
+                        <label>Address:</label>
+                        <span id="addressField"></span>
+                    </div>
+                    <div class="field">
+                        <label>Type:</label>
+                        <span id="typeField"></span>
+                    </div>
+                    <div class="field full-width" id="additionalInfoField" style="display: none;">
+                        <label>Additional Information:</label>
+                        <span id="additionalInfo"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Processing image...</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
